@@ -1,13 +1,87 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
-  content: MyText
-  parent: 1
+  title: Experiences professionnelles
+  content: 
+  parent: 
   rank: 1
 
-two:
-  title: MyString
-  content: MyText
-  parent: 1
+one_one:
+  title: 2007-2008 Lorem ipsum
+  content: >
+           dolor sit amet, consectetur adipiscing elit.
+
+           Nullam accumsan. Curabitur auctor erat sed metus. Mauris orci magna, 
+           congue eu, ornare a, scelerisque ac, quam.
+  parent: one
   rank: 1
+
+one_one_one:
+  title: Etiam in sem
+  content: 
+  parent: one_one
+  rank: 1
+
+one_one_twoo:
+  title: Maecenas aliquam enim vel velit
+  content: 
+  parent: one_twoo
+  rank: 2
+
+one_one_three:
+  title: Praesent sodales
+  content: 
+  parent: one_three
+  rank: 3
+
+one_two:
+  title: 2004-2006 Cras feugiat volutpat felis
+  content: >
+           Etiam ultrices, neque eget tincidunt rhoncus, tortor diam dapibus
+           augue, at sollicitudin diam risus sit amet sapien. Vivamus molestie
+           odio id lacus.
+           
+           Donec massa nulla, accumsan sed, laoreet quis, tempus consectetur,s
+           libero.
+  parent: one
+  rank: 2
+
+one_twoo_one:
+  title: Maecenas eleifend
+  content: Cras sed elit.
+  parent: one_one
+  rank: 1
+
+one_twoo_twoo:
+  title: Lorem ipsum dolor sit amet
+  content: Consectetur adipiscing elit.
+  parent: one_twoo
+  rank: 2
+
+twoo:
+  title: Realisations personnelles
+  content:
+  parent: 
+  rank: 2
+
+twoo_one:
+  title: Nunc ac lorem ut risus pellentesque convallis
+  content: >
+           Phasellus vel magna. Sed tincidunt ante ut odio.
+
+           Aliquam lorem.
+
+           Nullam rhoncus, sem et placerat gravida, mauris tortor facilisis
+           tellus, vitae tempor lacus arcu id enim.
+  parent: twoo
+  rank: 1
+
+twoo_twoo:
+  title: Maecenas consequat felis vitae leo
+  content: >
+           Fusce id nunc.
+           
+           Nam placerat, est ut egestas malesuada, libero nisl eleifend mauris,
+           et rhoncus nunc velit ornare metus. Donec congue iaculis odio. 
+  parent: twoo 
+  rank: 2

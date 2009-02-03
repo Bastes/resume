@@ -1,6 +1,6 @@
 <h1>New item</h1>
 
-<% form_for(@item) do |f| %>
+<% form_for([@parent, @item]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -12,15 +12,7 @@
     <%= f.text_area :content %>
   </p>
   <p>
-    <%= f.label :parent %><br />
-    <%= f.text_field :parent %>
-  </p>
-  <p>
-    <%= f.label :rank %><br />
-    <%= f.text_field :rank %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "Add" %>
   </p>
 <% end %>
 

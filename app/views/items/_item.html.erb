@@ -1,0 +1,18 @@
+<%= heading item %>
+
+<%= link_to 'Edit', edit_item_path(item) %>
+<%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %>
+
+<div><%= textilize item.content %></div>
+
+<div>
+  <ul>
+    <% for child in item.children -%>
+      <li>
+      <%= render :partial => child %>
+      </li>
+    <% end -%>
+  </ul>
+  <%= link_to 'New child', new_item_item_path(item) %>
+</div>
+

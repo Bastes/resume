@@ -12,17 +12,8 @@
     <%= f.text_area :content %>
   </p>
   <p>
-    <%= f.label :parent %><br />
-    <%= f.text_field :parent %>
-  </p>
-  <p>
-    <%= f.label :rank %><br />
-    <%= f.text_field :rank %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "Apply" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @item %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Cancel', items_path %>

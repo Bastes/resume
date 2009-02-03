@@ -1,8 +1,21 @@
 class ItemsController < ApplicationController
+  before_filter :get_parent
+
+  def get_parent
+    @parent = Item.find(params[:item_id]) if params[:item_id]
+  end
+
+  # GET /
   # GET /items
+  # GET /items/1/children
   # GET /items.xml
+  # GET /items/1/children.xml
   def index
-    @items = Item.find(:all)
+    if @parent
+      @items = @parent.children.with_children.ordered.find(:all)
+    else
+      @items = Item.with_children.ordered.heads
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +26,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.xml
   def show
-    @item = Item.find(params[:id])
+    @item = Item.with_children.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -22,9 +35,11 @@ class ItemsController < ApplicationController
   end
 
   # GET /items/new
+  # GET /items/1/children/new
   # GET /items/new.xml
+  # GET /items/1/children/new.xml
   def new
-    @item = Item.new
+    @item = Item.new(:parent => @parent)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,9 +53,12 @@ class ItemsController < ApplicationController
   end
 
   # POST /items
+  # POST /items/1/children
   # POST /items.xml
+  # POST /items/1/children.xml
   def create
     @item = Item.new(params[:item])
+    @item.parent = @parent
 
     respond_to do |format|
       if @item.save

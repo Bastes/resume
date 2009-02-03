@@ -3,7 +3,7 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.string :title
       t.text :content
-      t.integer :parent
+      t.integer :parent_id
       t.integer :rank
 
       t.timestamps
