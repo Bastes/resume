@@ -1,10 +1,11 @@
-<%= heading item %>
+<div>
+  <%= heading item %>
 
-<%= link_to 'Edit', edit_item_path(item) %>
-<%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %>
-
-<div><%= textilize item.content %></div>
-
+  <%= link_to 'Edit', edit_item_path(item) %>
+  <%= link_to 'Destroy', item, :confirm => 'Are you sure?',
+    :method => :delete %>
+  <div><%= textilize item.content %></div>
+</div>
 <div>
   <ul>
     <% for child in item.children -%>
