@@ -31,6 +31,26 @@
           $('<li></li>').appendTo(myself.prev()).load(myself.attr('href'));
           event.preventDefault();
         }
+        if (myself.text().match(/destroy/i)) {
+          if (confirm('Are you sure?')) {
+            $.ajax({
+              type: 'POST',
+              url: myself.attr('href'),
+              data: "_method=delete&" +
+                    encodeURIComponent(window._auth_token_name) + '=' +
+                    encodeURIComponent(window._auth_token),
+              success: function(msg) {
+                myself.parents('li:first').fadeOut(200, function() {
+                  $(this).remove();
+                });
+              },
+              error: function(req, msg, err) {
+                alert('Error while deleting :' + msg);
+              }
+            });
+          }
+          event.preventDefault();
+        }
       }
       if (myself.attr('type') &&  myself.attr('type').match(/submit/)) {
         var myform = myself.parents('form');
