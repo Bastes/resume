@@ -66,7 +66,7 @@ class ItemsController < ApplicationController
         format.html { redirect_to(@item) }
         format.xml  { render :xml => @item, :status => :created, :location => @item }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => "new", :status => 403 }
         format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
       end
     end
@@ -83,7 +83,7 @@ class ItemsController < ApplicationController
         format.html { redirect_to(@item) }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "edit", :status => 403 }
         format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
       end
     end

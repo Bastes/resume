@@ -1,19 +1,21 @@
 <h1>New item</h1>
 
-<% form_for([@parent, @item]) do |f| %>
-  <%= f.error_messages %>
+<div>
+  <% form_for([@parent, @item]) do |f| %>
+    <%= f.error_messages %>
 
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </p>
-  <p>
-    <%= f.submit "Add" %>
-  </p>
-<% end %>
+    <p>
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :content %><br />
+      <%= f.text_area :content %>
+    </p>
+    <p>
+      <%= f.submit "Add" %>
+    </p>
+  <% end %>
 
-<%= link_to 'Discard', items_path %>
+  <%= link_to 'Discard', items_path %>
+</div>
