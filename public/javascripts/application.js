@@ -4,7 +4,7 @@ $(document).ready(function() {
     var myself = $(event.target);
     if (myself.is('a')) {
       if (myself.text().match(/cancel/i)) {
-        myself.parents('li:first').load(myself.attr('href'));
+        myself.parents('li:first').load(myself.attr('href') + ' div:first');
         event.preventDefault();
       }
       if (myself.text().match(/discard/i)) {
@@ -12,12 +12,13 @@ $(document).ready(function() {
         event.preventDefault();
       }
       if (myself.text().match(/edit/i)) {
-        myself.parents('div:first').load(myself.attr('href') + ' div:first');
+        myself.parents('li:first').find('div:first')
+          .load(myself.attr('href') + ' div:first');
         event.preventDefault();
       }
       if (myself.text().match(/new/i)) {
-        $('<li></li>').appendTo(myself.prev()).load(myself.attr('href') +
-          ' div:first');
+        $('<li></li>').appendTo(myself.parents('li').find('ul:first'))
+          .load(myself.attr('href') + ' div:first');
         event.preventDefault();
       }
       if (myself.text().match(/destroy/i)) {
@@ -50,8 +51,8 @@ $(document).ready(function() {
   });
 
   $('ul:first + a').click(function(event) {
-    $('<li></li>').appendTo('ul:first').load($(this).attr('href') +
-      ' div:first');
+    $('<li></li>').appendTo('ul:first')
+      .load($(this).attr('href') + ' div:first');
     event.preventDefault();
   });
 

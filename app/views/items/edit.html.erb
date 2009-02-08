@@ -2,20 +2,11 @@
 
 <div>
   <% form_for(@item) do |f| %>
-    <%= f.error_messages %>
-
-    <p>
-      <%= f.label :title %><br />
-      <%= f.text_field :title %>
-    </p>
-    <p>
-      <%= f.label :content %><br />
-      <%= f.text_area :content %>
-    </p>
+    <%= render :partial => 'form', :locals => { :f => f } %>
     <p>
       <%= f.submit "Apply" %>
     </p>
   <% end %>
 
-  <%= link_to 'Cancel', @item %>
+  <%= link_to 'Cancel', @item, :class => 'control cancel' %>
 </div>

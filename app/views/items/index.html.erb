@@ -2,12 +2,12 @@
 
 <div id="msgs" style="position: fixed; top: 10px; right: 10px"></div>
 
-<ul>
+<ul class="items">
   <% for item in @items -%>
-    <li>
+    <li class="rank_<%= item.rank %>">
       <%= render :partial => item %>
     </li>
   <% end -%>
 </ul>
 
-<%= link_to 'New', new_item_path %>
+<%= link_to 'New', new_item_path, :class => 'control new' %>

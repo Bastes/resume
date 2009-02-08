@@ -1,24 +1,22 @@
 <div>
   <%= heading item %>
-
-  <%= link_to 'Edit', edit_item_path(item) %>
-  <%= link_to 'Destroy', item -%>
-<%
-=begin
-link_to 'Destroy', item, :confirm => 'Are you sure?',
-    :method => :delete
-=end
--%>
+  <div class="controls">
+    <div>
+      <%= link_to 'New child', new_item_item_path(item),
+                  :class => 'control new' %>
+      <%= link_to 'Edit', edit_item_path(item), :class => 'control edit' %>
+      <%= link_to 'Destroy', item, :class => 'control destroy' -%>
+    </div>
+  </div>
   <div><%= textilize item.content %></div>
 </div>
 <div>
-  <ul>
+  <ul class="items">
     <% for child in item.children -%>
-      <li>
+      <li class="rank_<%= item.rank %>">
       <%= render :partial => child %>
       </li>
     <% end -%>
   </ul>
-  <%= link_to 'New child', new_item_item_path(item) %>
 </div>
 
