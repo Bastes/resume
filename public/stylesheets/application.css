@@ -17,8 +17,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0px;
   padding-bottom: 0px;
 
-  border-bottom: solid 2px #bbb;
-
   font-family: Verdana;
   font-weight: bold;
   color: #777;
@@ -35,11 +33,16 @@ h2 {
   padding-top: 12px;
   padding-left: 8px;
 
-  border: none;
-
   background-repeat: no-repeat;
+  background-position: 0% 0%;
 
   color: white;
+}
+
+h3 {
+  background-image: url(/images/separator.png);
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
 }
 
 .rank_1 h2 { background-image: url(/images/heading_1.png); }
@@ -56,7 +59,8 @@ h2 {
 
 .rank_1 h3,
 .rank_5 h3 {
-  border: none;
+  background-image: none;
+
   font-size: 16px;
   margin: 0px;
 }
