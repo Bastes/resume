@@ -70,6 +70,25 @@ p {
   margin-bottom: 10px;
 }
 
+#msgs {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+
+  padding: 0px 10px;
+
+  background: #fff;
+}
+
+p.notice,
+p.error {
+  font-weight: bold;
+}
+
+p.notice { color: #7b7; }
+p.error  { color: #b77; }
+
 .controls {
   position: relative;
 }

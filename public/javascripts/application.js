@@ -3,25 +3,26 @@ $(document).ready(function() {
   $('ul:first').click(function(event) {
     var myself = $(event.target);
     if (myself.is('a.control')) {
-      if (myself.is('.cancel')) {
+      // responding to clicks on control links
+      if (myself.is('.cancel'))
+        // cancel modifications on an existing item
         myself.parents('li:first').load(myself.attr('href') + ' div:first');
-        event.preventDefault();
-      }
-      if (myself.is('.discard')) {
+
+      if (myself.is('.discard'))
+        // discard new item
         myself.parents('li:first').remove();
-        event.preventDefault();
-      }
-      if (myself.is('.edit')) {
+      if (myself.is('.edit'))
+        // in-place edit interface
         myself.parents('li:first').find('div:first')
           .load(myself.attr('href') + ' div:first');
-        event.preventDefault();
-      }
-      if (myself.is('.new')) {
+
+      if (myself.is('.new'))
+        // interface for a new item down parent's list
         $('<li></li>').appendTo(myself.parents('li').find('ul:first'))
           .load(myself.attr('href') + ' div:first');
-        event.preventDefault();
-      }
+
       if (myself.is('.destroy')) {
+        // destroy an item
         if (confirm('Are you sure?')) {
           $.ajax({
             type: 'POST',
@@ -39,27 +40,40 @@ $(document).ready(function() {
             }
           });
         }
-        event.preventDefault();
       }
+
+      // always prevent propagation on control links
+      event.preventDefault();
     }
+
     if (myself.attr('type') &&  myself.attr('type').match(/submit/i)) {
+      // submitting a form
       var myform = myself.parents('form');
       myself.parents('li:first').load(myform.attr('action') + ' div:first',
         myform.serializeArray());
+
       event.preventDefault();
     }
   });
 
   $('ul:first + a.control.new').click(function(event) {
+    // interface for new root item
     $('<li></li>').appendTo('ul:first')
       .load($(this).attr('href') + ' div:first');
+
     event.preventDefault();
   });
 
-  $('#msgs').ajaxError(function(event, request, options, error) {
-    $('#errorExplanation ul li', request.responseText)
-      .wrapInner('<p></p>').find('p:first').css({ color: 'red' })
-      .appendTo($(this)).fadeOut(2000, function() { $(this).remove(); });
-  });
-
+  $('#msgs')
+    .ajaxError(function(event, request, options, error) {
+      // logging validation errors
+      $('#errorExplanation ul li', request.responseText)
+        .wrapInner('<p></p>').find('p:first').addClass('error')
+        .prependTo($(this)).fadeOut(2000, function() { $(this).remove(); });
+    })
+    .ajaxSuccess(function(event, request, options) {
+      // loggin confirmation messages
+      $('.notice', request.responseText)
+        .prependTo($(this)).fadeOut(2000, function() { $(this).remove(); });
+    });
 });
