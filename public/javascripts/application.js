@@ -2,26 +2,26 @@ $(document).ready(function() {
 
   $('ul:first').click(function(event) {
     var myself = $(event.target);
-    if (myself.is('a')) {
-      if (myself.text().match(/cancel/i)) {
+    if (myself.is('a.control')) {
+      if (myself.is('.cancel')) {
         myself.parents('li:first').load(myself.attr('href') + ' div:first');
         event.preventDefault();
       }
-      if (myself.text().match(/discard/i)) {
+      if (myself.is('.discard')) {
         myself.parents('li:first').remove();
         event.preventDefault();
       }
-      if (myself.text().match(/edit/i)) {
+      if (myself.is('.edit')) {
         myself.parents('li:first').find('div:first')
           .load(myself.attr('href') + ' div:first');
         event.preventDefault();
       }
-      if (myself.text().match(/new/i)) {
+      if (myself.is('.new')) {
         $('<li></li>').appendTo(myself.parents('li').find('ul:first'))
           .load(myself.attr('href') + ' div:first');
         event.preventDefault();
       }
-      if (myself.text().match(/destroy/i)) {
+      if (myself.is('.destroy')) {
         if (confirm('Are you sure?')) {
           $.ajax({
             type: 'POST',
@@ -50,7 +50,7 @@ $(document).ready(function() {
     }
   });
 
-  $('ul:first + a').click(function(event) {
+  $('ul:first + a.control.new').click(function(event) {
     $('<li></li>').appendTo('ul:first')
       .load($(this).attr('href') + ' div:first');
     event.preventDefault();

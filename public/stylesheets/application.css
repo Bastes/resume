@@ -54,6 +54,13 @@ h2 {
 .rank_4 ul h3 { color: #2e4f3d; }
 .rank_5 ul h3 { color: #5f6e48; }
 
+.rank_1 h3,
+.rank_5 h3 {
+  border: none;
+  font-size: 16px;
+  margin: 0px;
+}
+
 p {
   margin-top: 0px;
   margin-bottom: 10px;
