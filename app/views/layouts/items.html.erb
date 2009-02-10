@@ -21,9 +21,17 @@
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
 
-<%= yield  %>
+  <%= yield  %>
 
+  <%
+=begin
+This is a workaround for jQuery 1.2.6 in jRails, it seems body's immediate
+children can't be found with a context. FIXME when the bug is (hopefully) fixed.
+=end
+  -%>
+  <div>
+    <p class="notice"><%= flash[:notice] %></p>
+  </div>
 </body>
 </html>

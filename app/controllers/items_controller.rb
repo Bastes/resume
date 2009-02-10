@@ -84,7 +84,8 @@ class ItemsController < ApplicationController
         format.xml  { head :ok }
       else
         format.html { render :action => "edit", :status => 403 }
-        format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @item.errors,
+                             :status => :unprocessable_entity }
       end
     end
   end

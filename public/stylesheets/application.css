@@ -1,5 +1,5 @@
 * {
-  font-family: Verdana;
+  font-family: Geneva, Verdana;
   font-weight: 10px;
 }
 
@@ -10,14 +10,17 @@ ul.items {
   padding: none;
 }
 
-ul.items li { position: relative; }
+ul.items li {
+  position: relative;
+  width: 100%;
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 10px;
   margin-bottom: 0px;
   padding-bottom: 0px;
 
-  font-family: Verdana;
+  font-family: Geneva, Verdana;
   font-weight: bold;
   color: #777;
 }
@@ -70,9 +73,32 @@ p {
   margin-bottom: 10px;
 }
 
+#msgs {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+
+  padding: 0px 10px;
+
+  background: #fff;
+}
+
+.id { display: none; }
+
+p.notice,
+p.error {
+  font-weight: bold;
+}
+
+p.notice { color: #7b7; }
+p.error  { color: #b77; }
+
 .controls {
+  display: none;
   position: relative;
 }
+li:hover > * > .controls { display: block; }
 
 .controls div {
   position: absolute;
@@ -87,6 +113,8 @@ a.control {
   font-weight: bold;
   text-decoration: none;
 }
+
+a.control.show { display: none; }
 
 a.control.cancel,
 a.control.discard { color: #b77; }
