@@ -1,13 +1,15 @@
 <div>
   <%= heading item %>
-  <div class="controls">
-    <div>
-      <%= link_to 'New child', new_item_item_path(item),
-                  :class => 'control new' %>
-      <%= link_to 'Edit', edit_item_path(item), :class => 'control edit' %>
-      <%= link_to 'Destroy', item, :class => 'control destroy' -%>
+  <% admin_area do -%>
+    <div class="controls">
+      <div>
+        <%= link_to 'New child', new_item_item_path(item),
+                    :class => 'control new' %>
+        <%= link_to 'Edit', edit_item_path(item), :class => 'control edit' %>
+        <%= link_to 'Destroy', item, :class => 'control destroy' -%>
+      </div>
     </div>
-  </div>
+  <% end -%>
   <div><%= textilize item.content %></div>
 </div>
 <div>

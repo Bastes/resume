@@ -10,4 +10,6 @@
   <% end -%>
 </ul>
 
-<%= link_to 'New', new_item_path, :class => 'control new' %>
+<% admin_area do -%>
+  <%= link_to 'New', new_item_path, :class => 'control new' %>
+<% end -%>

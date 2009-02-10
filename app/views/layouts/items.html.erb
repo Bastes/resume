@@ -7,6 +7,9 @@
   <title>Resume</title>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag :defaults %>
+  <% admin_area do -%>
+    <%= javascript_include_tag 'admin.js' %>
+  <% end -%>
 <% if protect_against_forgery? -%>
     <script type='text/javascript'>
     //<![CDATA[

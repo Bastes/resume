@@ -7,4 +7,26 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   filter_parameter_logging :password
+
+  helper_method :admin?, :logged?
+
+  def authorize
+    unless admin?
+      flash[:error] = "Access denied"
+      redirect_to home_path
+      false
+    end
+  end
+
+  protected
+  
+  # user logged ?
+  def logged?
+    session[:password] ? true : false
+  end
+  
+  # admin recognition
+  def admin?
+    session[:password] == ADMIN_PASSWORD
+  end
 end
