@@ -1,5 +1,25 @@
 $(document).ready(function() {
 
+  // making the lists sortable
+  $('ul:first, ul:first ul').sortable({
+    handle: 'h2, h3, h4, h5, h6',
+    opacity: 1,
+    axis: 'y',
+    update: function(event, ui) {
+      items = ui.element.children(':not(:last)');
+      var params = { _method: 'PUT' };
+      params[window._auth_token_name] = window._auth_token;
+      params['item[rank]'] = ui.item.prevAll().length + 1;
+      $.post(ui.item.find('.control.show:first').attr('href'), params,
+        function(data) {
+          items.each(function(index) {
+            $(this).removeClass().addClass('rank_' + (index + 1));
+          });
+        }
+      );
+    }
+  });
+
   $('ul:first').click(function(event) {
     var myself = $(event.target);
     if (myself.is('a.control')) {
@@ -28,8 +48,8 @@ $(document).ready(function() {
             type: 'POST',
             url: myself.attr('href'),
             data: "_method=delete&" +
-                  encodeURIComponent(window._auth_token_name) + '=' +
-                  encodeURIComponent(window._auth_token),
+              encodeURIComponent(window._auth_token_name) + '=' +
+              encodeURIComponent(window._auth_token),
             success: function(msg) {
               myself.parents('li:first').fadeOut(200, function() {
                 $(this).remove();

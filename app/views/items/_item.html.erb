@@ -2,6 +2,7 @@
   <%= heading item %>
   <div class="controls">
     <div>
+      <%= link_to 'show', item, :class => 'control show' %>
       <%= link_to 'New child', new_item_item_path(item),
                   :class => 'control new' %>
       <%= link_to 'Edit', edit_item_path(item), :class => 'control edit' %>

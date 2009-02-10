@@ -10,7 +10,10 @@ ul.items {
   padding: none;
 }
 
-ul.items li { position: relative; }
+ul.items li {
+  position: relative;
+  width: 100%;
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 10px;
@@ -81,6 +84,8 @@ p {
   background: #fff;
 }
 
+.id { display: none; }
+
 p.notice,
 p.error {
   font-weight: bold;
@@ -90,8 +95,10 @@ p.notice { color: #7b7; }
 p.error  { color: #b77; }
 
 .controls {
+  display: none;
   position: relative;
 }
+li:hover > * > .controls { display: block; }
 
 .controls div {
   position: absolute;
@@ -106,6 +113,8 @@ a.control {
   font-weight: bold;
   text-decoration: none;
 }
+
+a.control.show { display: none; }
 
 a.control.cancel,
 a.control.discard { color: #b77; }
