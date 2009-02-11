@@ -4,7 +4,7 @@ class Item < ActiveRecord::Base
 
   belongs_to :parent,   :class_name => 'Item', :foreign_key => 'parent_id'
   has_many   :children, :class_name => 'Item', :foreign_key => 'parent_id',
-             :order => 'rank ASC'
+             :dependent => :destroy, :order => 'rank ASC'
 
   named_scope :ordered, :order => 'rank ASC'
   named_scope :with_children, :include => :children do
