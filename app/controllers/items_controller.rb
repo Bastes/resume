@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_filter :get_parent
+  before_filter :authorize, :except => [:index, :show]
 
   def get_parent
     @parent = Item.find(params[:item_id]) if params[:item_id]

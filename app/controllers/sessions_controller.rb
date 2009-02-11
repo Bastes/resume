@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   def create
     session[:password] = params[:password]
     flash[:notice] = "Session created."
-    redirect_to items_url
+    redirect_to root_path
   end
 
   # DELETE /sessions/1
@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
   def destroy
     reset_session
     flash[:notice] = "Session destroyed."
-    redirect_to items_url
+    redirect_to root_path
   end
 end
