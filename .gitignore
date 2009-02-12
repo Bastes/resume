@@ -5,3 +5,5 @@ db/schema.rb
 .DS_Store
 doc/api
 doc/app
+Capfile
+config/deploy.rb
