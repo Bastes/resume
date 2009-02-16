@@ -1,8 +1,7 @@
 module ItemsHelper
   def heading(item)
-    level = 
-    content_tag "h#{item.level + 2}" do
-      h(item.title)
+    content_tag "h#{item.level + 1}" do
+      textilize item.title
     end
   end
 end

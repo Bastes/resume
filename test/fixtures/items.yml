@@ -1,36 +1,41 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 one:
-  title: Personal qualities
-  content: 
-  parent: 
+  title: Caton the Ancient
+  content: Delenda est Carthago
+  parent:
   rank: 1
 
 one_one:
-  title: Quisque ut est
-  content:
+  title: Personal qualities
+  content: 
   parent: one
   rank: 1
+
+one_one_one:
+  title: Quisque ut est
+  content:
+  parent: one_one
+  rank: 1
  
-one_twoo:
+one_one_twoo:
   title: Duis gravida, erat id euismod volutpat
   content:
-  parent: one
+  parent: one_one
   rank: 2
  
-one_three:
+one_one_three:
   title: Sed scelerisque
   content:
-  parent: one
+  parent: one_one
   rank: 3
  
-twoo:
+one_twoo:
   title: Competences
   content:
-  parent: 
+  parent: one
   rank: 2
  
-twoo_one:
+one_twoo_one:
   title: Nunc ac lorem ut risus pellentesque convallis
   content: >
            Phasellus vel magna. Sed tincidunt ante ut odio.
@@ -39,54 +44,54 @@ twoo_one:
 
            Nullam rhoncus, sem et placerat gravida, mauris tortor facilisis
            tellus, vitae tempor lacus arcu id enim.
-  parent: twoo
+  parent: one_twoo
   rank: 1
 
-twoo_twoo:
+one_twoo_twoo:
   title: Maecenas consequat felis vitae leo
   content: >
            Fusce id nunc.
            
            Nam placerat, est ut egestas malesuada, libero nisl eleifend mauris,
            et rhoncus nunc velit ornare metus. Donec congue iaculis odio. 
-  parent: twoo
+  parent: one_twoo
   rank: 2
 
-three:
+one_three:
   title: Past activities
   content:
-  parent: 
+  parent: one
   rank: 3
 
-three_one:
+one_three_one:
   title: 2007-2008 Lorem ipsum
   content: >
            dolor sit amet, consectetur adipiscing elit.
 
            Nullam accumsan. Curabitur auctor erat sed metus. Mauris orci magna, 
            congue eu, ornare a, scelerisque ac, quam.
-  parent: three
+  parent: one_three
   rank: 1
 
-three_one_one:
+one_three_one_one:
   title: Etiam in sem
   content: 
-  parent: three_one
+  parent: one_three_one
   rank: 1
 
-three_one_twoo:
+one_three_one_twoo:
   title: Maecenas aliquam enim vel velit
   content: 
-  parent: three_one
+  parent: one_three_one
   rank: 2
 
-three_one_three:
+one_three_one_three:
   title: Praesent sodales
   content: 
-  parent: three_one
+  parent: one_three_one
   rank: 3
 
-three_twoo:
+one_three_twoo:
   title: 2004-2006 Cras feugiat volutpat felis
   content: >
            Etiam ultrices, neque eget tincidunt rhoncus, tortor diam dapibus
@@ -95,37 +100,37 @@ three_twoo:
            
            Donec massa nulla, accumsan sed, laoreet quis, tempus consectetur,s
            libero.
-  parent: three
+  parent: one_three
   rank: 2
 
-three_twoo_one:
+one_three_twoo_one:
   title: Maecenas eleifend
   content: Cras sed elit.
-  parent: three_twoo
+  parent: one_three_twoo
   rank: 1
 
-three_twoo_twoo:
+one_three_twoo_twoo:
   title: Lorem ipsum dolor sit amet
   content: Consectetur adipiscing elit.
-  parent: three_twoo
+  parent: one_three_twoo
   rank: 2
 
-four:
+one_four:
   title: Formation
   content:
-  parent: 
+  parent: one
   rank: 4
 
-four_one:
+one_four_one:
   title: 2003-2004 Curabitur auctor erat sed metus
   content: >
            Nullam accumsan.
            
            Mauris orci magna, congue eu, ornare a, scelerisque ac, quam.
-  parent: four
+  parent: one_four
   rank: 1
 
-four_twoo:
+one_four_twoo:
   title: 2000-2003 Ut nibh
   content: >
            Donec imperdiet imperdiet mi.
@@ -137,29 +142,29 @@ four_twoo:
            Maecenas auctor metus nec erat.
            
            Sed sollicitudin purus nec libero rutrum ultrices.
-  parent: four
+  parent: one_four
   rank: 2
 
-five:
+one_five:
   title: Hobbies
   content:
-  parent: 
+  parent: one
   rank: 5
 
-five_one:
+one_five_one:
   title: Vivamus velit magna
   content:
-  parent: five
+  parent: one_five
   rank: 1
 
-five_twoo:
+one_five_twoo:
   title: Nunc non lectus
   content:
-  parent: five
+  parent: one_five
   rank: 2
 
-five_three:
+one_five_three:
   title: And of course, reading and writing latin...
   content:
-  parent: five
+  parent: one_five
   rank: 3

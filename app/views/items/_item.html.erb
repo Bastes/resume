@@ -16,7 +16,7 @@
 <div>
   <ul class="items">
     <% for child in item.children -%>
-      <li class="rank_<%= item.rank %>">
+      <li class="rank_<%= child.rank %>">
       <%= render :partial => child %>
       </li>
     <% end -%>
