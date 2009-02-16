@@ -26,7 +26,7 @@ $(document).ready(function() {
       // responding to clicks on control links
       if (myself.is('.cancel'))
         // cancel modifications on an existing item
-        myself.parents('li:first').load(myself.attr('href') + ' div:first');
+        myself.parents('li:first').load(myself.attr('href') + ' div:first > *');
 
       if (myself.is('.discard'))
         // discard new item
@@ -34,12 +34,16 @@ $(document).ready(function() {
       if (myself.is('.edit'))
         // in-place edit interface
         myself.parents('li:first').find('div:first')
-          .load(myself.attr('href') + ' div:first');
+          .load(myself.attr('href') + ' div:first > *');
 
-      if (myself.is('.new'))
+      if (myself.is('.new')) {
         // interface for a new item down parent's list
-        $('<li></li>').appendTo(myself.parents('li').find('ul:first'))
-          .load(myself.attr('href') + ' div:first');
+        var mylist = myself.parents('li').find('ul:first');
+        $('<li></li>')
+          .addClass('rank_' + (mylist.children().length + 1))
+          .appendTo(mylist)
+          .load(myself.attr('href') + ' div:first > *');
+      }
 
       if (myself.is('.destroy')) {
         // destroy an item
@@ -67,9 +71,13 @@ $(document).ready(function() {
     }
 
     if (myself.attr('type') &&  myself.attr('type').match(/submit/i)) {
+      var to_seek = 'li:first';
+      if (myself.attr('value').match(/update/i))
+        to_seek += ' div';
+
       // submitting a form
       var myform = myself.parents('form');
-      myself.parents('li:first').load(myform.attr('action') + ' div:first',
+      myself.parents(to_seek).load(myform.attr('action') + ' div:first > *',
         myform.serializeArray());
 
       event.preventDefault();
@@ -77,8 +85,12 @@ $(document).ready(function() {
   });
 
   $('ul:first + a.control.new').click(function(event) {
+    var mylist = $('ul:first');
+
     // interface for new root item
-    $('<li></li>').appendTo('ul:first')
+    $('<li></li>')
+      .addClass('rank_' + (mylist.children().length + 1))
+      .appendTo(mylist)
       .load($(this).attr('href') + ' div:first');
 
     event.preventDefault();
