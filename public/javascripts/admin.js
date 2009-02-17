@@ -38,7 +38,7 @@ $(document).ready(function() {
 
       if (myself.is('.new')) {
         // interface for a new item down parent's list
-        var mylist = myself.parents('li').find('ul:first');
+        var mylist = myself.parents('li:first').find('ul:first');
         $('<li></li>')
           .addClass('rank_' + (mylist.children().length + 1))
           .appendTo(mylist)
