@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   def create
     session[:password] = params[:password]
     flash[:notice] = "Session created."
-    redirect_to root_path
+    redirect_to items_path # admin cached page gets fancy scripts and controls
   end
 
   # DELETE /sessions/1

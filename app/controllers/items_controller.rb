@@ -1,12 +1,11 @@
 class ItemsController < ApplicationController
   before_filter :get_parent
-  before_filter :authorize, :except => [:index, :show]
+  before_filter :authorize
 
   def get_parent
     @parent = Item.find(params[:item_id]) if params[:item_id]
   end
 
-  # GET /
   # GET /items
   # GET /items/1/children
   # GET /items.xml
@@ -98,7 +97,7 @@ class ItemsController < ApplicationController
     @item.destroy
 
     respond_to do |format|
-      format.html { redirect_to(items_url) }
+      format.html { redirect_to(items_path) }
       format.xml  { head :ok }
     end
   end

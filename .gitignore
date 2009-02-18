@@ -8,3 +8,4 @@ doc/api
 doc/app
 Capfile
 config/deploy.rb
+public/index.html
