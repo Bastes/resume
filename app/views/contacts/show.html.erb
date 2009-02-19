@@ -1,18 +1,5 @@
 <p>
-  <b>Type:</b>
-  <%=h @contact.type %>
+  <%= render :partial => @contact %>
 </p>
 
-<p>
-  <b>Text:</b>
-  <%=h @contact.text %>
-</p>
-
-<p>
-  <b>Rank:</b>
-  <%=h @contact.rank %>
-</p>
-
-
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>

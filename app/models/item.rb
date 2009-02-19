@@ -18,9 +18,9 @@ class Item < ActiveRecord::Base
   end
 
   def before_create
-    previous = Item.find(:first,
-                          :conditions => { :parent_id => self.parent_id },
-                          :order => 'rank DESC')
+    previous = self.class.find(:first,
+                               :conditions => { :parent_id => self.parent_id },
+                               :order => 'rank DESC')
     if previous
       self.rank = previous.rank.next
     else

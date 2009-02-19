@@ -3,6 +3,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :sessions
 
+  map.resources :contacts
+
   map.resources :items do |item|
     item.resources :items, :as => 'children'
   end

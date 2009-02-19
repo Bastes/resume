@@ -1,24 +1,12 @@
 <h1>Editing contact</h1>
 
-<% form_for(@contact) do |f| %>
-  <%= f.error_messages %>
+<% form_for(@contact) do |f| -%>
+  <%= render :partial => 'form', :locals => { :f => f } %>
 
-  <p>
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
-  </p>
-  <p>
-    <%= f.label :text %><br />
-    <%= f.text_field :text %>
-  </p>
-  <p>
-    <%= f.label :rank %><br />
-    <%= f.text_field :rank %>
-  </p>
   <p>
     <%= f.submit "Update" %>
   </p>
-<% end %>
+<% end -%>
 
 <%= link_to 'Show', @contact %> |
 <%= link_to 'Back', contacts_path %>
