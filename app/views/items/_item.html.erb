@@ -14,7 +14,7 @@
   <div><%= textilize item.content %></div>
 </div>
 <div>
-  <ul class="items">
+  <ul class="items level_<%= item.level %>">
     <% for child in item.children -%>
       <li class="rank_<%= child.rank %>">
       <%= render :partial => child %>

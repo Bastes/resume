@@ -1,6 +1,28 @@
+body {
+  background-color: #eee;
+}
+
 * {
   font-family: Geneva, Verdana;
-  font-weight: 10px;
+}
+
+#resume {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  width: 730px;
+  padding-right: 70px;
+
+  font-size: 12px;
+  background-color: #fff;
+  background-image: url(/images/shadow.png);
+  background-position: 100% 0;
+  background-repeat: repeat-y;
+}
+
+ul.items.level_0 {
+  padding-left: 0px;
 }
 
 ul.items {
@@ -16,7 +38,7 @@ ul.items li {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 10px;
+  margin-top: 5px;
   margin-bottom: 0px;
   padding-bottom: 0px;
 
@@ -25,12 +47,12 @@ h1, h2, h3, h4, h5, h6 {
   color: #777;
 }
 
-h1 { font-size: 28px; }
-h2 { font-size: 24px; }
-h3 { font-size: 20px; }
-h4 { font-size: 18px; }
-h5 { font-size: 16px; }
-h6 { font-size: 14px; }
+h1 { font-size: 22px; }
+h2 { font-size: 20px; }
+h3 { font-size: 16px; }
+h4 { font-size: 14px; }
+h5 { font-size: 13px; }
+h6 { font-size: 12px; }
 
 h2 {
   padding-top: 12px;
@@ -98,13 +120,18 @@ p.error  { color: #b77; }
   display: none;
   position: relative;
 }
+
 li:hover > * > .controls { display: block; }
 
 .controls div {
   position: absolute;
-  bottom: -100%;
-  right: 0px;
+  bottom: 0px;
+  right: -50px;
+
+  padding-left: 50px;
   
+  border-bottom: #bbb solid 1px;
+
   text-align: right;
 }
 

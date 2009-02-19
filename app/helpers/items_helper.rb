@@ -1,7 +1,7 @@
 module ItemsHelper
   def heading(item)
     content_tag "h#{item.level + 1}" do
-      textilize item.title
+      textilize_without_paragraph item.title
     end
   end
 end

@@ -19,6 +19,32 @@
   <defs
      id="defs4">
     <linearGradient
+       id="linearGradient3368">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3370" />
+      <stop
+         style="stop-color:#efefef;stop-opacity:0;"
+         offset="1"
+         id="stop3372" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3356">
+      <stop
+         style="stop-color:#efefef;stop-opacity:1;"
+         offset="0"
+         id="stop3358" />
+      <stop
+         id="stop3364"
+         offset="0.5"
+         style="stop-color:#efefef;stop-opacity:1;" />
+      <stop
+         style="stop-color:#efefef;stop-opacity:1;"
+         offset="1"
+         id="stop3360" />
+    </linearGradient>
+    <linearGradient
        id="linearGradient3507">
       <stop
          style="stop-color:#bfbfbf;stop-opacity:1;"
@@ -161,6 +187,16 @@
        y1="28.572577"
        x2="407.09146"
        y2="162.92287" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3368"
+       id="linearGradient3374"
+       x1="626.49658"
+       y1="275.25187"
+       x2="641.34582"
+       y2="275.25187"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.4285714,0,0,1,359.50149,1.4142135)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -169,11 +205,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="315.06795"
-     inkscape:cy="785.75102"
+     inkscape:zoom="0.7071068"
+     inkscape:cx="158.14072"
+     inkscape:cy="915.63704"
      inkscape:document-units="px"
-     inkscape:current-layer="layer8"
+     inkscape:current-layer="layer9"
      showgrid="false"
      inkscape:window-width="1680"
      inkscape:window-height="971"
@@ -198,7 +234,7 @@
         </dc:creator>
         <dc:rights>
           <cc:Agent>
-            <dc:title></dc:title>
+            <dc:title />
           </cc:Agent>
         </dc:rights>
         <dc:description>Sample headings graphics for my Resume project.</dc:description>
@@ -266,8 +302,38 @@
   </g>
   <g
      inkscape:groupmode="layer"
+     id="layer9"
+     inkscape:label="Background">
+    <rect
+       style="opacity:1;fill:#efefef;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect2584"
+       width="117.37971"
+       height="551.54327"
+       x="628"
+       y="0.1873202" />
+    <rect
+       style="opacity:1;fill:url(#linearGradient3374);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3366"
+       width="6.3639603"
+       height="552.95752"
+       x="628"
+       y="0.1873202" />
+    <rect
+       y="6.3621826"
+       x="628.00031"
+       height="1"
+       width="6.3639603"
+       id="rect3378"
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:export-filename="/home/michelb/Projets/resume/public/images/shadow.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
      id="layer8"
-     inkscape:label="Separator">
+     inkscape:label="Separator"
+     sodipodi:insensitive="true">
     <path
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"

@@ -1,13 +1,15 @@
-<div id="msgs"></div>
+<div id="resume">
+  <div id="msgs"></div>
 
-<ul class="items">
-  <% for item in @items -%>
-    <li class="rank_<%= item.rank %>">
-      <%= render :partial => item %>
-    </li>
+  <ul class="items">
+    <% for item in @items -%>
+      <li class="rank_<%= item.rank %>">
+        <%= render :partial => item %>
+      </li>
+    <% end -%>
+  </ul>
+
+  <% admin_area do -%>
+    <%= link_to 'New', new_item_path, :class => 'control new' %>
   <% end -%>
-</ul>
-
-<% admin_area do -%>
-  <%= link_to 'New', new_item_path, :class => 'control new' %>
-<% end -%>
+</div>
