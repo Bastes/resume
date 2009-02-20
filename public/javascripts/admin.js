@@ -20,6 +20,23 @@ $(document).ready(function() {
     }
   });
 
+  $('a#clear_cache').click(function(event) {
+    event.preventDefault();
+    if (confirm('Are you sure?')) {
+      $.ajax({
+        type: 'POST',
+        url: $(this).attr('href'),
+        data: "_method=delete&" +
+          encodeURIComponent(window._auth_token_name) + '=' +
+          encodeURIComponent(window._auth_token),
+        success: function(msg) {
+          $('<p></p>').addClass('notice').text(msg).prependTo("#msgs")
+            .fadeOut(2000, function() { $(this).remove(); });
+        }
+      });
+    }
+  });
+
   $('ul:first').click(function(event) {
     var myself = $(event.target);
     if (myself.is('a.control')) {

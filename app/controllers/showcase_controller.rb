@@ -3,14 +3,15 @@ class ShowcaseController < ApplicationController
 
   before_filter :authorize, :except => :show
 
-  # the showcase is definetly not for the admin (trumps the admin controls)
+  # the showcase show view (trumps the admin controls when showing)
   def admin?
-    false
+    @show ? false : super
   end
 
   # GET /
   # GET /showcase/
   def show
+    @show  = true
     @items = Item.with_children.ordered.heads
 
     respond_to do |format|
@@ -23,10 +24,12 @@ class ShowcaseController < ApplicationController
   def destroy
     expire_page('/')
     expire_page(:action => :show)
+    flash[:notice] = "Cache expired."
 
     respond_to do |format|
-      format.html render root_path
-      format.xml { head :ok }
+      format.html { render root_path }
+      format.xml  { head :ok }
+      format.js   { render :text => flash[:notice] }
     end
   end
 end

@@ -22,6 +22,7 @@
 </head>
 <body>
 
+  <%= link_to "Clear the cache", showcase_path, :id => "clear_cache", :class => "control destroy" %>
 
   <%= yield  %>
 
@@ -31,7 +32,8 @@ This is a workaround for jQuery 1.2.6 in jRails, it seems body's immediate
 children can't be found with a context. FIXME when the bug is (hopefully) fixed.
 =end
   -%>
-  <div>
+
+  <div id="msgs">
     <p class="notice"><%= flash[:notice] %></p>
   </div>
 </body>

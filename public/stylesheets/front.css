@@ -95,13 +95,13 @@ body { background-color: #eee; }
 
 #msgs {
   position: fixed;
-  top: 0px;
+  top: 20px;
   right: 0px;
   z-index: 1;
 
   padding: 0px 10px;
 
-  background: #fff;
+  background: inherit;
 }
 
 #msgs p.notice,

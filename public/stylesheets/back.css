@@ -1,0 +1,43 @@
+.controls {
+  display: none;
+  position: relative;
+}
+
+li:hover > * > .controls { display: block; }
+
+#resume .controls div {
+  position: absolute;
+  bottom: 0px;
+  right: -50px;
+
+  padding-left: 50px;
+  
+  border-bottom: #bbb solid 1px;
+
+  text-align: right;
+}
+
+a#clear_cache {
+  position: fixed;
+  top: 0px;
+  right: 10px;
+}
+
+a.control {
+  color: #bbb;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a.control.show { display: none; }
+
+a.control.cancel,
+a.control.discard { color: #b77; }
+a.control.edit    { color: #7b7; }
+a.control.destroy { color: #b77; }
+a.control.new     { color: #bb7; }
+
+#resume input,
+#resume textarea { width:  80%; }
+#resume textarea { height: 80px; }
+
