@@ -1,4 +1,50 @@
 $(document).ready(function() {
+  //////////////////////////////////////////////////////////////////////////////
+  // Cache manipulation
+
+  $('a#clear_cache').click(function(event) {
+    // clearing the cache
+    event.preventDefault();
+    if (confirm('Are you sure?')) {
+      $.ajax({
+        type: 'POST',
+        url: $(this).attr('href'),
+        data: "_method=delete&" +
+          encodeURIComponent(window._auth_token_name) + '=' +
+          encodeURIComponent(window._auth_token),
+        success: function(msg) {
+          $('<p></p>').addClass('notice').text(msg).prependTo("#msgs")
+            .fadeOut(2000, function() { $(this).remove(); });
+        }
+      });
+    }
+  });
+
+  //////////////////////////////////////////////////////////////////////////////
+  // Contacts manipulation
+
+  $('#contacts')
+    .click(function(event) {
+      var myself = $(event.target);
+      if (myself.is('a.control')) {
+        // always prevent propagation on control links
+        event.preventDefault();
+
+        if (myself.is('.edit'))
+          // clicked on an edit contact link
+          myself.parents('li:first').load(myself.attr('href') +
+            ' div:first > *');
+        if (myself.is('.new'))
+          // clicked on the new contact link
+          $('<li></li>').appendTo(myself.parents('ul:first')).load(
+            myself.attr('href') + ' div:first > *');
+      }
+    })
+    .load($('#contacts a:first').attr('href') + ' div#contacts > *')
+    .find('a:first').remove();
+
+  //////////////////////////////////////////////////////////////////////////////
+  // Itms manipulation
 
   // making the lists sortable
   $('#resume ul.items').sortable({
@@ -20,26 +66,12 @@ $(document).ready(function() {
     }
   });
 
-  $('a#clear_cache').click(function(event) {
-    event.preventDefault();
-    if (confirm('Are you sure?')) {
-      $.ajax({
-        type: 'POST',
-        url: $(this).attr('href'),
-        data: "_method=delete&" +
-          encodeURIComponent(window._auth_token_name) + '=' +
-          encodeURIComponent(window._auth_token),
-        success: function(msg) {
-          $('<p></p>').addClass('notice').text(msg).prependTo("#msgs")
-            .fadeOut(2000, function() { $(this).remove(); });
-        }
-      });
-    }
-  });
-
   $('#resume ul.items').click(function(event) {
     var myself = $(event.target);
     if (myself.is('a.control')) {
+      // always prevent propagation on control links
+      event.preventDefault();
+      
       // responding to clicks on control links
       if (myself.is('.cancel'))
         // cancel modifications on an existing item
@@ -82,9 +114,6 @@ $(document).ready(function() {
           });
         }
       }
-
-      // always prevent propagation on control links
-      event.preventDefault();
     }
 
     if (myself.attr('type') &&  myself.attr('type').match(/submit/i)) {
@@ -112,6 +141,9 @@ $(document).ready(function() {
 
     event.preventDefault();
   });
+
+  //////////////////////////////////////////////////////////////////////////////
+  // Ajax notifications handling
 
   $('#msgs')
     .ajaxError(function(event, request, options, error) {

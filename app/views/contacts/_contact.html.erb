@@ -1,10 +1,10 @@
 <%=h contact.type %>
 <% contact_text = h(contact.text) -%>
 <% admin_area do -%>
-  <% contact_text = link_to contact_text, edit_contact_path(contact) -%>
+  <% contact_text = link_to contact_text, edit_contact_path(contact), :class => 'control edit' -%>
 <% end -%>
 <%= contact_text %>
 <% admin_area do -%>
   <%= link_to 'Destroy', contact, :confirm => 'Are you sure?',
-              :method => :delete %>
+              :method => :delete, :class => 'control delete' %>
 <% end -%>

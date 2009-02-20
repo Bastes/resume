@@ -1,3 +1,11 @@
+#contacts {
+  position: absolute;
+  top: 0px;
+  left: 800px;
+
+  width: 200px;
+}
+
 .controls {
   display: none;
   position: relative;

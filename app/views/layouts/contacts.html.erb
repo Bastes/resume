@@ -9,9 +9,13 @@
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+  <div id="contacts">
+    <%= yield  %>
+  </div>
 
-<%= yield  %>
+  <div id="msgs">
+    <p class="notice"><%= flash[:notice] %></p>
+  </div>
 
 </body>
 </html>
