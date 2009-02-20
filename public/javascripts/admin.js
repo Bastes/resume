@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   // making the lists sortable
-  $('ul:first, ul:first ul').sortable({
+  $('#resume ul.items').sortable({
     handle: 'h2, h3, h4, h5, h6',
     opacity: 1,
     axis: 'y',
@@ -37,7 +37,7 @@ $(document).ready(function() {
     }
   });
 
-  $('ul:first').click(function(event) {
+  $('#resume ul.items').click(function(event) {
     var myself = $(event.target);
     if (myself.is('a.control')) {
       // responding to clicks on control links
@@ -55,7 +55,7 @@ $(document).ready(function() {
 
       if (myself.is('.new')) {
         // interface for a new item down parent's list
-        var mylist = myself.parents('li:first').find('ul:first');
+        var mylist = myself.parents('li:first').find('#resume ul.items');
         $('<li></li>')
           .addClass('rank_' + (mylist.children().length + 1))
           .appendTo(mylist)
@@ -101,8 +101,8 @@ $(document).ready(function() {
     }
   });
 
-  $('ul:first + a.control.new').click(function(event) {
-    var mylist = $('ul:first');
+  $('#resume ul.items + a.control.new').click(function(event) {
+    var mylist = $('#resume ul.items');
 
     // interface for new root item
     $('<li></li>')
@@ -116,7 +116,7 @@ $(document).ready(function() {
   $('#msgs')
     .ajaxError(function(event, request, options, error) {
       // logging validation errors
-      $('#errorExplanation ul li', request.responseText)
+      $('#errorExplanation ul.items li', request.responseText)
         .wrapInner('<p></p>').find('p:first').addClass('error')
         .prependTo($(this)).fadeOut(2000, function() { $(this).remove(); });
     })
