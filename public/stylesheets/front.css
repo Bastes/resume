@@ -1,0 +1,112 @@
+body { background-color: #eee; }
+
+*    { font-family: Geneva, Verdana; }
+
+#resume {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  width: 730px;
+  padding-right: 70px;
+
+  font-size: 12px;
+  background-color: #fff;
+  background-image: url(/images/shadow.png);
+  background-position: 100% 0;
+  background-repeat: repeat-y;
+}
+
+#resume ul.items {
+  list-style-image: none;
+  list-style-type: none;
+  margin: 0;
+}
+
+#resume ul.items.level_0 { padding-left: 0px; }
+
+#resume ul.items li {
+  position: relative;
+  width: 100%;
+}
+
+#resume h1,
+#resume h2,
+#resume h3,
+#resume h4,
+#resume h5,
+#resume h6 {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+
+  font-family: Geneva, Verdana;
+  font-weight: bold;
+  color: #777;
+}
+
+#resume h1 { font-size: 22px; }
+#resume h2 { font-size: 20px; }
+#resume h3 { font-size: 16px; }
+#resume h4 { font-size: 14px; }
+#resume h5 { font-size: 13px; }
+#resume h6 { font-size: 12px; }
+
+#resume h2 {
+  padding-top: 12px;
+  padding-left: 8px;
+
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+
+  color: white;
+}
+
+#resume h3 {
+  background-image: url(/images/separator.png);
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+}
+
+#resume .rank_1 .rank_1 h2 { background-image: url(/images/heading_1.png); }
+#resume .rank_1 .rank_2 h2 { background-image: url(/images/heading_2.png); }
+#resume .rank_1 .rank_3 h2 { background-image: url(/images/heading_3.png); }
+#resume .rank_1 .rank_4 h2 { background-image: url(/images/heading_4.png); }
+#resume .rank_1 .rank_5 h2 { background-image: url(/images/heading_5.png); }
+
+#resume .level_0 .rank_1 .level_1 h3 { color: #8c3e54; }
+#resume .level_0 .rank_2 .level_1 h3 { color: #5c3166; }
+#resume .level_0 .rank_3 .level_1 h3 { color: #3c274f; }
+#resume .level_0 .rank_4 .level_1 h3 { color: #2e4f3d; }
+#resume .level_0 .rank_5 .level_1 h3 { color: #5f6e48; }
+
+#resume .level_0 .rank_1 .level_1 h3,
+#resume .level_0 .rank_5 .level_1 h3 {
+  background-image: none;
+
+  font-size: 16px;
+  margin: 0px;
+}
+
+#resume p {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+#msgs {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+
+  padding: 0px 10px;
+
+  background: #fff;
+}
+
+#msgs p.notice,
+#msgs p.error  { font-weight: bold; }
+
+#msgs p.notice { color: #7b7; }
+#msgs p.error  { color: #b77; }
+
