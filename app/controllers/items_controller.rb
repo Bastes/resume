@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.js   { render :layout => 'ajax' }
       format.xml  { render :xml => @items }
     end
   end
@@ -30,6 +31,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+      format.js   { render :layout => 'ajax' }
       format.xml  { render :xml => @item }
     end
   end
@@ -43,6 +45,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      format.js   { render :layout => 'ajax' }
       format.xml  { render :xml => @item }
     end
   end
@@ -50,6 +53,12 @@ class ItemsController < ApplicationController
   # GET /items/1/edit
   def edit
     @item = Item.find(params[:id])
+
+    respond_to do |format|
+      format.html # edit.html.erb
+      format.js   { render :layout => 'ajax' }
+      format.xml  { render :xml => @item }
+    end
   end
 
   # POST /items
@@ -64,9 +73,11 @@ class ItemsController < ApplicationController
       if @item.save
         flash[:notice] = 'Item was successfully created.'
         format.html { redirect_to(@item) }
+        format.js   { render :action => "show", :layout => 'ajax' }
         format.xml  { render :xml => @item, :status => :created, :location => @item }
       else
         format.html { render :action => "new", :status => 403 }
+        format.js   { render :action => "new", :status => 403, :layout => 'ajax' }
         format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
       end
     end
@@ -81,9 +92,11 @@ class ItemsController < ApplicationController
       if @item.update_attributes(params[:item])
         flash[:notice] = 'Item was successfully updated.'
         format.html { redirect_to(@item) }
+        format.js   { render :action => "show", :layout => 'ajax' }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit", :status => 403 }
+        format.js   { render :action => "edit", :status => 403, :layout => 'ajax' }
         format.xml  { render :xml => @item.errors,
                              :status => :unprocessable_entity }
       end
@@ -95,9 +108,11 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
+    flash[:notice] = 'Item was successfully deleted.'
 
     respond_to do |format|
       format.html { redirect_to(items_path) }
+      format.js   { render :text => "", :layout => 'ajax' }
       format.xml  { head :ok }
     end
   end

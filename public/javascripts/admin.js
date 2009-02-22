@@ -36,8 +36,8 @@ $(document).ready(function() {
             ' div:first > *');
         if (myself.is('.new'))
           // clicked on the new contact link
-          $('<li></li>').appendTo(myself.parents('ul:first')).load(
-            myself.attr('href') + ' div:first > *');
+          $('<li></li>').appendTo(myself.parents('div:first').find('ul:first'))
+            .load(myself.attr('href') + ' div:first > *');
       }
     })
     .load($('#contacts a:first').attr('href') + ' div#contacts > *')
@@ -66,7 +66,7 @@ $(document).ready(function() {
     }
   });
 
-  $('#resume ul.items').click(function(event) {
+  $('#resume').click(function(event) {
     var myself = $(event.target);
     if (myself.is('a.control')) {
       // always prevent propagation on control links
@@ -87,9 +87,10 @@ $(document).ready(function() {
 
       if (myself.is('.new')) {
         // interface for a new item down parent's list
-        var mylist = myself.parents('li:first').find('#resume ul.items');
+        var mylist = myself.parents('li:first').children('div:last')
+          .find('ul.items:first');
         $('<li></li>')
-          .addClass('rank_' + (mylist.children().length + 1))
+          .addClass('rank_' + (mylist.children().size() + 1))
           .appendTo(mylist)
           .load(myself.attr('href') + ' div:first > *');
       }
@@ -119,7 +120,7 @@ $(document).ready(function() {
     if (myself.attr('type') &&  myself.attr('type').match(/submit/i)) {
       var to_seek = 'li:first';
       if (myself.attr('value').match(/update/i))
-        to_seek += ' div';
+        to_seek += ' div:first';
 
       // submitting a form
       var myform = myself.parents('form');
