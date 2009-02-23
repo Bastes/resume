@@ -1,6 +1,14 @@
 body { background-color: #eee; }
-
 *    { font-family: Geneva, Verdana; }
+
+a {
+  font-family: inherit;
+  color: #7bf;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: inherit;
+  cursor: pointer;
+}
 
 #resume {
   position: absolute;
