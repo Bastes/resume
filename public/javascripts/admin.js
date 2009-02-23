@@ -68,7 +68,21 @@ $(document).ready(function() {
       }
     })
     // load the contacts in the ajax box (cleaner controllers)
-    .load($('#contacts a:first').remove().attr('href') + ' div#contacts > *');
+    .load(
+      $('#contacts a:first').remove().attr('href') + ' div#contacts > *',
+      function() {
+        $('#contacts ul').sortable({ // making the items lists sortable
+          handle: '.controls .handle',
+          opacity: 1, axis: 'y',
+          update: function(event, ui) {
+            var params = { _method: 'PUT' };
+            params[window._auth_token_name] = window._auth_token;
+            params['contact[rank]'] = ui.item.prevAll().length + 1;
+            $.post(ui.item.find('.control.show:first').attr('href'), params);
+          }
+        });
+      }
+    );
 
   //////////////////////////////////////////////////////////////////////////////
   // Itms manipulation

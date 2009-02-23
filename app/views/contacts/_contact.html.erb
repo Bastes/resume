@@ -6,7 +6,9 @@
 </span>
 <% admin_area do -%>
   <span class="controls">
-    <%= link_to 'Edit', edit_contact_path(contact), :class => 'control edit' -%>
+    <span class="handle">Move</span>
+    <%= link_to 'Show', contact, :class => 'control show' %>
+    <%= link_to 'Edit', edit_contact_path(contact), :class => 'control edit' %>
     <%= link_to 'Destroy', contact, :confirm => 'Are you sure?',
                 :method => :delete, :class => 'control destroy' %>
   </span>
