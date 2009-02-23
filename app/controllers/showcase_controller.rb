@@ -13,10 +13,11 @@ class ShowcaseController < ApplicationController
   def show
     @show  = true
     @items = Item.with_children.ordered.heads
+    @contacts = Contact.ordered.find :all
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml { render :xml => @items }
+      format.xml { render :xml => { :items => @items, :contacts => @contacts } }
     end
   end
 
