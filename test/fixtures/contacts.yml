@@ -1,0 +1,25 @@
+one:
+  kind: Address
+  text: 123 Quality str
+        London, UK
+  rank: 1
+
+twoo:
+  kind: Phone
+  text: 01 . 23 . 45 . 67 . 89
+  rank: 2
+
+three:
+  kind: Cell
+  text: 98 . 76 . 54 . 32 . 10
+  rank: 3
+
+four:
+  kind: E-Mail
+  text: c.t.a@antiquity.com
+  rank: 4
+
+five:
+  kind: IM
+  text: cat_the_nciant@hotmail.com
+  rank: 5

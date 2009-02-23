@@ -1,8 +1,8 @@
 <span class="kind">
-  <%=h contact.kind %>
+  <%= textilize_without_paragraph contact.kind %>
 </span>
 <span class="text">
-  <%= contact.text %>
+  <%= textilize_without_paragraph contact.text %>
 </span>
 <% admin_area do -%>
   <span class="controls">
