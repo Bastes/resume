@@ -74,11 +74,14 @@ class ItemsController < ApplicationController
         flash[:notice] = 'Item was successfully created.'
         format.html { redirect_to(@item) }
         format.js   { render :action => "show", :layout => 'ajax' }
-        format.xml  { render :xml => @item, :status => :created, :location => @item }
+        format.xml  { render :xml => @item, :status => :created,
+                             :location => @item }
       else
-        format.html { render :action => "new", :status => 403 }
-        format.js   { render :action => "new", :status => 403, :layout => 'ajax' }
-        format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.js   { render :action => "new", :status => 403,
+                             :layout => 'ajax' }
+        format.xml  { render :xml => @item.errors,
+                             :status => :unprocessable_entity }
       end
     end
   end
@@ -95,8 +98,9 @@ class ItemsController < ApplicationController
         format.js   { render :action => "show", :layout => 'ajax' }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit", :status => 403 }
-        format.js   { render :action => "edit", :status => 403, :layout => 'ajax' }
+        format.html { render :action => "edit" }
+        format.js   { render :action => "edit", :status => 403,
+                             :layout => 'ajax' }
         format.xml  { render :xml => @item.errors,
                              :status => :unprocessable_entity }
       end

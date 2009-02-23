@@ -1,5 +1,5 @@
 class Contact < ActiveRecord::Base
-  validates_presence_of :type
+  validates_presence_of :kind
   validates_presence_of :rank, :on => :update
 
   named_scope :ordered, :order => 'rank ASC'

@@ -93,6 +93,27 @@ body { background-color: #eee; }
   margin-bottom: 10px;
 }
 
+#contacts {
+  position: absolute;
+  top: 0px;
+  left: 810px;
+
+  font-size: 10px;
+}
+
+#contacts ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#contacts li {
+  position: relative;
+}
+
+#contacts .kind { font-style: italic; }
+#contacts .text { font-weight: bold; }
+
 #msgs {
   position: fixed;
   top: 20px;

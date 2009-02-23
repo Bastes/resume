@@ -1,16 +1,9 @@
-#contacts {
-  position: absolute;
-  top: 0px;
-  left: 800px;
-
-  width: 200px;
-}
-
 .controls {
   display: none;
   position: relative;
 }
 
+li:hover > .controls,
 li:hover > * > .controls { display: block; }
 
 #resume .controls div {
@@ -25,17 +18,33 @@ li:hover > * > .controls { display: block; }
   text-align: right;
 }
 
+#contacts .controls {
+  position: absolute;
+  top: 0px;
+  left: 100%;
+
+  width: 100px;
+
+  padding-left: 10px;
+
+  border-bottom: #bbb solid 1px;
+  text-align: right;
+}
+
 a#clear_cache {
   position: fixed;
   top: 0px;
   right: 10px;
 }
 
+.controls .handle,
 a.control {
   color: #bbb;
   font-weight: bold;
   text-decoration: none;
 }
+
+.controls .handle { cursor: move; }
 
 a.control.show { display: none; }
 

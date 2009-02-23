@@ -1,11 +1,13 @@
-<ul>
-<% for contact in @contacts -%>
-  <li>
-    <%= render :partial => contact -%>
-  </li>
-<% end -%>
-</ul>
+<div id="contacts">
+  <ul>
+  <% for contact in @contacts -%>
+    <li>
+      <%= render :partial => contact -%>
+    </li>
+  <% end -%>
+  </ul>
 
-<% admin_area do -%>
-  <%= link_to 'New', new_contact_path, :class => 'control new' %>
-<% end -%>
+  <% admin_area do -%>
+    <%= link_to 'New', new_contact_path, :class => 'control new' %>
+  <% end -%>
+</div>

@@ -17,6 +17,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+      format.js   { render :layout => 'ajax' }
       format.xml  { render :xml => @contact }
     end
   end
@@ -28,6 +29,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      format.js   { render :layout => 'ajax' }
       format.xml  { render :xml => @contact }
     end
   end
@@ -35,6 +37,12 @@ class ContactsController < ApplicationController
   # GET /contacts/1/edit
   def edit
     @contact = Contact.find(params[:id])
+
+    respond_to do |format|
+      format.html # edit.html.erb
+      format.js   { render :layout => 'ajax' }
+      format.xml  { render :xml => @contact }
+    end
   end
 
   # POST /contacts
@@ -46,10 +54,15 @@ class ContactsController < ApplicationController
       if @contact.save
         flash[:notice] = 'Contact was successfully created.'
         format.html { redirect_to(@contact) }
-        format.xml  { render :xml => @contact, :status => :created, :location => @contact }
+        format.js   { render :action => "show", :layout => 'ajax' }
+        format.xml  { render :xml => @contact, :status => :created,
+                             :location => @contact }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @contact.errors, :status => :unprocessable_entity }
+        format.js   { render :action => "new", :status => 403,
+                             :layout => 'ajax' }
+        format.xml  { render :xml => @contact.errors,
+                             :status => :unprocessable_entity }
       end
     end
   end
@@ -63,10 +76,14 @@ class ContactsController < ApplicationController
       if @contact.update_attributes(params[:contact])
         flash[:notice] = 'Contact was successfully updated.'
         format.html { redirect_to(@contact) }
+        format.js   { render :action => "show", :layout => 'ajax' }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @contact.errors, :status => :unprocessable_entity }
+        format.js   { render :action => "edit", :status => 403,
+                             :layout => 'ajax' }
+        format.xml  { render :xml => @contact.errors,
+                             :status => :unprocessable_entity }
       end
     end
   end
@@ -79,6 +96,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(contacts_url) }
+      format.js   { render :text => "", :layout => 'ajax' }
       format.xml  { head :ok }
     end
   end
