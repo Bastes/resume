@@ -1,20 +1,11 @@
 <h1>Listing pictures</h1>
 
-<table>
-  <tr>
-    <th>Item</th>
-  </tr>
-
+<ul>
 <% for picture in @pictures %>
-  <tr>
-    <td><%=h picture.item_id %></td>
-    <td><%= link_to 'Show', picture %></td>
-    <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-    <td><%= link_to 'Destroy', picture, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <li>
+    <%= render :partial => picture %>
+  </li>
 <% end %>
-</table>
-
-<br />
+</ul>
 
 <%= link_to 'New picture', new_picture_path %>

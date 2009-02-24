@@ -8,6 +8,7 @@ class Item < ActiveRecord::Base
   has_many   :pictures, :dependent => :destroy
 
   named_scope :ordered, :order => 'rank ASC'
+  named_scope :with_pictures, :include => :pictures
   named_scope :with_children, :include => :children do
     def heads
       find_all_by_parent_id(nil)

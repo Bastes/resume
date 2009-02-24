@@ -1,8 +1,6 @@
-<p>
-  <b>Item:</b>
-  <%=h @picture.item_id %>
-</p>
-
+<div>
+  <%= render :partial => picture %>
+</div>
 
 <%= link_to 'Edit', edit_picture_path(@picture) %> |
 <%= link_to 'Back', pictures_path %>
