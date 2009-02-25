@@ -4,9 +4,14 @@ Resume is basically a proof-of-concept toy project I designed to keep my online
 resume up-to-date in our web-based professional world. I wanted it to be as sexy
 as possible, and easy to use and redesign (CSS + unobtrusive AJAX).
 
+To for a fun jQuery experience, every items that get a "rank" attriute can be
+sorted with just a little mouse drag-and-drop, and (almost) anything can be done
+on the items page without any of those nasty page reloads.
+
 I hope you try and enjoy it, feel free to extend it, it's GPL software (see
-LICENCE). It also comes packaged with sample graphics and CSS styles, feel free
-to reuse, it's under creative commons (I also included the SVG sources, enjoy).
+the ./LICENCE). It also comes packaged with sample graphics and CSS styles, feel
+free to reuse, it's under creative commons (I also included the SVG sources,
+enjoy).
 
 == Getting started
 
@@ -23,9 +28,14 @@ There you are, all set and ready to go. Now you can :
 6. visit http://localhost:3000/ to see the view
 7. visit http://localhost:3000/login to log in as admin (remember your password)
 
+If you need an exemple of automated deployment, you can checkout my "dreamhost"
+branch, there's a Capfile and a config/deploy.rb there that knows a lot about
+how to set an environment on DreamHost servers. It's password-free, so don't
+be shy...
+
 == Data structure
 
-Fairly simple for now, there is but one model :
+Fairly simple for now, there are twoo models :
 
 Item
   title:string mandatory
@@ -35,7 +45,18 @@ Item
   belong_to parent:Item    (fk: parent_id)
   has_many  children:Items (fk: parent_id)
 
+An Item is a versatile part of the resume, it can range from the very root title
+to the very leaffy competence or past experience.
 Items are organised in a tree-structure (parent / children) and ordered by rank.
+
+Contact
+  kind:string mandatory
+  text:string mandatory
+  rank:integer
+
+A Contact stores an address, a phone number, an email, etc. to contact the
+resume's owner.
+Contacts are just ordered and that's all there is to them, really.
 
 == Credits
 
