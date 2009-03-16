@@ -176,5 +176,6 @@ $(document).ready(function() {
     .ajaxSuccess(function(event, request, options) { // confirmation messages
       $('.notice', request.responseText)
         .prependTo($(this)).fadeOut(2000, function() { $(this).remove(); });
-    });
+    })
+    .children('p').fadeOut(2000, function() { $(this).remove(); });
 });
