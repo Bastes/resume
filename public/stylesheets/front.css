@@ -32,6 +32,11 @@ a {
 }
 
 #resume ul.items.level_0 { padding-left: 0px; }
+#resume ul.items.level_0 > li { margin-bottom: 20px; }
+
+#resume ul.items strong { color: #777; }
+
+#resume ul.items.level_0 strong { color: inherit; }
 
 #resume ul.items li {
   position: relative;
@@ -61,7 +66,7 @@ a {
 #resume h6 { font-size: 12px; }
 
 #resume h2 {
-  padding-top: 12px;
+  padding-top: 4px;
   padding-left: 8px;
 
   background-repeat: no-repeat;
@@ -106,7 +111,7 @@ a {
   top: 0px;
   left: 810px;
 
-  font-size: 10px;
+  font-size: 12px;
 }
 
 #contacts ul {

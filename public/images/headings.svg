@@ -123,50 +123,50 @@
        id="linearGradient3747"
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(-0.125,352.20004)"
-       x1="318.70312"
-       y1="28.572577"
-       x2="407.09146"
-       y2="162.92287" />
+       x1="35.481281"
+       y1="42.815269"
+       x2="635.46875"
+       y2="42.815269" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient2403"
        id="linearGradient3474"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(1,0,0,1.0130609,-35.48128,258.50263)"
-       x1="318.70312"
-       y1="28.572577"
-       x2="407.09146"
-       y2="162.92287" />
+       x1="35.481281"
+       y1="42.815273"
+       x2="635.48126"
+       y2="42.815273" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3411"
        id="linearGradient3487"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(1,0,0,1.0130609,-35.48128,168.98767)"
-       x1="318.70312"
-       y1="28.572577"
-       x2="407.09146"
-       y2="162.92287" />
+       x1="35.481281"
+       y1="42.815273"
+       x2="635.48126"
+       y2="42.815273" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3579"
        id="linearGradient3493"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(1,0,0,1.0130609,-35.48128,78.987731)"
-       x1="318.70312"
-       y1="28.572577"
-       x2="407.09146"
-       y2="162.92287" />
+       x1="35.481281"
+       y1="42.815273"
+       x2="635.48126"
+       y2="42.815273" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3295"
        id="linearGradient3497"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(1,0,0,1.0002656,-35.48128,-10.717069)"
-       x1="318.70312"
-       y1="28.572577"
-       x2="407.09146"
-       y2="162.92287" />
+       x1="35.481281"
+       y1="43.067814"
+       x2="635.48126"
+       y2="43.067814" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3295"
@@ -205,14 +205,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7071068"
-     inkscape:cx="158.14072"
-     inkscape:cy="915.63704"
+     inkscape:zoom="1"
+     inkscape:cx="26.79023"
+     inkscape:cy="913.13418"
      inkscape:document-units="px"
-     inkscape:current-layer="layer9"
+     inkscape:current-layer="layer6"
      showgrid="false"
      inkscape:window-width="1680"
-     inkscape:window-height="971"
+     inkscape:window-height="972"
      inkscape:window-x="0"
      inkscape:window-y="26" />
   <metadata
@@ -332,8 +332,7 @@
   <g
      inkscape:groupmode="layer"
      id="layer8"
-     inkscape:label="Separator"
-     sodipodi:insensitive="true">
+     inkscape:label="Separator">
     <path
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
@@ -347,12 +346,11 @@
      inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="Heading 5"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <g
        id="g3388"
        transform="translate(-35.34375,-2.3952774)"
-       inkscape:export-filename="/home/michelb/workspace/resume/public/images/heading_5.png"
+       inkscape:export-filename="/home/michelb/Projets/resume/public/images/heading_5.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90">
       <path
@@ -370,14 +368,13 @@
      inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="Heading 4"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <path
        style="fill:url(#linearGradient3474);fill-opacity:1;stroke:none;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 9.65625,281.87711 C 4.333393,281.87711 0,286.2671 0,291.65948 L 0,321.87711 L 600,321.87711 L 600,281.87711 L 9.65625,281.87711 z"
        id="path3478"
        sodipodi:nodetypes="cccccc"
-       inkscape:export-filename="/home/michelb/workspace/resume/public/images/heading_4.png"
+       inkscape:export-filename="/home/michelb/Projets/resume/public/images/heading_4.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
@@ -388,14 +385,13 @@
   <g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="Heading 3"
-     sodipodi:insensitive="true">
+     inkscape:label="Heading 3">
     <path
        style="fill:url(#linearGradient3487);fill-opacity:1;stroke:none;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 9.65625,192.36215 C 4.333393,192.36215 0,196.75214 0,202.14452 L 0,232.36215 L 600,232.36215 L 600,192.36215 L 9.65625,192.36215 z"
        id="path3403"
        sodipodi:nodetypes="cccccc"
-       inkscape:export-filename="/home/michelb/workspace/resume/public/images/heading_3.png"
+       inkscape:export-filename="/home/michelb/Projets/resume/public/images/heading_3.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
@@ -434,14 +430,13 @@
   <g
      inkscape:groupmode="layer"
      id="layer3"
-     inkscape:label="Heading 2"
-     sodipodi:insensitive="true">
+     inkscape:label="Heading 2">
     <path
        style="fill:url(#linearGradient3493);fill-opacity:1;stroke:none;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 9.65625,102.36221 C 4.333393,102.36221 0,106.7522 0,112.14458 L 0,142.36221 L 600,142.36221 L 600,102.36221 L 9.65625,102.36221 z"
        id="path3291"
        sodipodi:nodetypes="cccccc"
-       inkscape:export-filename="/home/michelb/workspace/resume/public/images/heading_2.png"
+       inkscape:export-filename="/home/michelb/Projets/resume/public/images/heading_2.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
@@ -454,14 +449,13 @@
      inkscape:label="Heading 1"
      inkscape:groupmode="layer"
      id="layer1"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <path
        style="fill:url(#linearGradient3497);fill-opacity:1;stroke:none;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 9.65625,12.362183 C 4.333393,12.362183 0,16.696723 0,22.020998 L 0,52.362183 L 600,52.362183 L 600,12.362183 L 9.65625,12.362183 z"
        id="rect2383"
        sodipodi:nodetypes="cccccc"
-       inkscape:export-filename="/home/michelb/workspace/resume/public/images/heading_1.png"
+       inkscape:export-filename="/home/michelb/Projets/resume/public/images/heading_1.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
