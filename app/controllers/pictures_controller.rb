@@ -1,8 +1,15 @@
 class PicturesController < ApplicationController
+  before_filter :get_item
+  before_filter :authorize, :except => [:index, :show]
+
+  def get_item
+    @item = Item.find(params[:item_id])
+  end
+
   # GET /items/1/pictures
   # GET /items/1/pictures.xml
   def index
-    @pictures = Picture.find(:all)
+    @pictures = @item.pictures.find :all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,7 +33,7 @@ class PicturesController < ApplicationController
   # GET /items/1/pictures/new
   # GET /items/1/pictures/new.xml
   def new
-    @picture = Picture.new
+    @picture = Picture.new(:item => @item)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,7 +45,7 @@ class PicturesController < ApplicationController
   # POST /items/1/pictures
   # POST /items/1/pictures.xml
   def create
-    @picture = Picture.new(params[:picture])
+    @picture = Picture.new(params[:picture].merge(:item => @item))
 
     respond_to do |format|
       if @picture.save
