@@ -6,6 +6,4 @@ config/database.yml
 .DS_Store
 doc/api
 doc/app
-Capfile
-config/deploy.rb
 public/index.html
