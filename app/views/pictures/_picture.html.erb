@@ -1,4 +1,4 @@
 <%= image_tag picture.content.url(:thumb) %>
 <%= link_to 'Show (medium)', picture.content.url(:medium) %>
 <%= link_to 'Show (original)', picture.content.url %>
-<%= link_to 'Destroy', picture, :confirm => 'Are you sure?', :method => :delete %>
+<%= link_to 'Destroy', [@item, picture], :confirm => 'Are you sure?', :method => :delete %>

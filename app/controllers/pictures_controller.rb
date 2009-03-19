@@ -50,7 +50,7 @@ class PicturesController < ApplicationController
     respond_to do |format|
       if @picture.save
         flash[:notice] = 'Picture was successfully created.'
-        format.html { redirect_to(@picture) }
+        format.html { redirect_to([@item, @picture]) }
         format.js   { render :action => "show", :layout => 'ajax' }
         format.xml  { render :xml => @picture, :status => :created, :location => @picture }
       else
@@ -70,7 +70,7 @@ class PicturesController < ApplicationController
     flash[:notice] = 'Picture was successfully deleted.'
 
     respond_to do |format|
-      format.html { redirect_to(pictures_url) }
+      format.html { redirect_to(item_pictures_url(@item)) }
       format.js   { render :text => "", :layout => 'ajax' }
       format.xml  { head :ok }
     end

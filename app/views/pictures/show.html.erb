@@ -1,6 +1,6 @@
 <div>
-  <%= render :partial => picture %>
+  <%= render :partial => @picture %>
 </div>
 
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
+<%= link_to 'Edit', edit_item_picture_path(@item, @picture) %> |
+<%= link_to 'Back', item_pictures_path(@item) %>
