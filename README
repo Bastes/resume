@@ -4,7 +4,7 @@ Resume is basically a proof-of-concept toy project I designed to keep my online
 resume up-to-date in our web-based professional world. I wanted it to be as sexy
 as possible, and easy to use and redesign (CSS + unobtrusive AJAX).
 
-To for a fun jQuery experience, every items that get a "rank" attriute can be
+For a fun jQuery experience, every items that get a "rank" attriute can be
 sorted with just a little mouse drag-and-drop, and (almost) anything can be done
 on the items page without any of those nasty page reloads.
 
