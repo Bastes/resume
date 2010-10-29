@@ -7,7 +7,7 @@ set :git_enable_submodules, 1 # this app needs its submodules
 
 # setting dreamhost host informations
 set :user,            "bastes_resume"
-set :domain,          "hades.dreamhost.com"
+set :domain,          "resume.brouillon-de-culture.com"
 set :project,         "resume"
 set :application,     "resume.brouillon-de-culture.com"
 set :application_dir, "/home/#{user}/#{application}"
